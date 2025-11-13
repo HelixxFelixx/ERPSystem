@@ -29,6 +29,7 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
   text-align: center;
   padding: 20px;
+  height: 240px;
 }
 
 .faculty-card:hover {
@@ -59,6 +60,7 @@ body {
 }
 
 .faculty-card:hover h3 {
+ font-size: 20px;
   color: white;
 }
 
@@ -300,17 +302,58 @@ body {
     max-width: 300px;
   }
 }
-.dept-header {
-  background-color: #ffc107;
-  color: #004d7a;
-  text-align: center;
-  padding: 15px;
-  font-size: 2.2rem;
-  font-weight: bold;
-  width: 100vw;
-margin: 0 0 20px 0;
-position: relative;
-left: 50%;
-right: 50%;
-transform: translateX(-50%);
+:root {
+            --primary-color: #007bff; /* Change this for main blue theme */
+            --secondary-color: #003366; /* Darker blue for header/footer */
+            --bg-color: #f8f9fa; /* Light background */
+            --card-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --border-radius: 10px;
+        }
+
+.header {
+            background-color: var(--secondary-color);;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--card-shadow);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+  display: flex;
+  align-items: center;
+  
+  gap: 10px; /* space between logo and text */
 }
+
+.logo img {
+  height: 50px; /* adjust size as needed */
+  width: auto;
+  margin-left: 10px;
+}
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: flex-end; /* Align header options properly to the right */
+            align-items: center;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            padding: 10px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #ffc107; /* Added yellow color on hover */
+            color: #000; /* Dark text for contrast on yellow background */
+            border-radius: 5px;
+        }
